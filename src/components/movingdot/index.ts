@@ -1,0 +1,1 @@
+export { Movingdot } from "./Movingdot";

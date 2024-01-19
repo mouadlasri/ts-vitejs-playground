@@ -1,0 +1,15 @@
+.movingdot-container {
+  display: relative;
+  height: 250px;
+  width: 250px;
+  border: 1px solid black;
+  /* margin: 0 auto; */
+}
+
+.movingdot {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: rgb(151, 150, 150);
+  border-radius: 50%;
+}
