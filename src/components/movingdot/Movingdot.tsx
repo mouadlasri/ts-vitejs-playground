@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
-// import CSS
-import "./Movingdot.css";
+import "./movingdot.css";
 
 export const Movingdot = () => {
   const [position, setPosition] = useState({
@@ -10,12 +9,9 @@ export const Movingdot = () => {
   });
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    // get surrounding box dimensions
-    const box = e.currentTarget.getBoundingClientRect();
-    // box.left is the distance from the left edge of the viewport to the left edge of the box
-    const x = e.clientX - box.left;
-    // box.top is the distance from the top edge of the viewport to the top edge of the box
-    const y = e.clientY - box.top;
+    const boundingBox = e.currentTarget.getBoundingClientRect();
+    const x: number = e.clientX - boundingBox.left - 10;
+    const y: number = e.clientY - boundingBox.top - 10;
 
     setPosition({
       x: x,
@@ -24,14 +20,16 @@ export const Movingdot = () => {
   };
 
   return (
-    <>
-      <div className="movingdot-container" onMouseMove={handleMouseMove}>
-        {/* moving dot */}
+    <div>
+      <h1>Moving Test Dot</h1>
+      <div className="moving-dot-container" onMouseMove={handleMouseMove}>
         <div
-          className="movingdot"
-          style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
-        ></div>
+          className="moving-dot"
+          style={{
+            transform: `translate(${position.x}px, ${position.y}px)`,
+          }}
+        />
       </div>
-    </>
+    </div>
   );
 };
