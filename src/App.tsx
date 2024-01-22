@@ -4,12 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 import { Movingdot } from "./components/movingdot/index";
+import { Form } from "./components/form/index";
 
 function App() {
   return (
     <>
       <h1>Vite App</h1>
 
+      <Form />
       <Movingdot />
     </>
   );
