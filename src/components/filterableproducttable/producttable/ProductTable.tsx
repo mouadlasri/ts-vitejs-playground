@@ -26,7 +26,7 @@ export const ProductTable = (props: { products: Product[] }) => {
   });
 
   return (
-    <table>
+    <table className="product-table">
       <thead>
         <tr>
           <th>Name</th>

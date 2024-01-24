@@ -15,7 +15,7 @@ interface Product {
 
 export const FilterableProductTable = (props: { products: Product[] }) => {
   return (
-    <div>
+    <div className="filterable-product-table">
       <Searchbar />
       <ProductTable products={props.products} />
       <div>
