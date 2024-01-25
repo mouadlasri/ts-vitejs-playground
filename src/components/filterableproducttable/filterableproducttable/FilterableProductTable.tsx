@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { Searchbar } from "../searchbar/Searchbar";
 import { ProductTable } from "../producttable/ProductTable";
@@ -14,10 +14,18 @@ interface Product {
 }
 
 export const FilterableProductTable = (props: { products: Product[] }) => {
+  const [filterText, setFilterText] = useState("");
+  const [inStockOnly, setInStockOnly] = useState(false);
+
   return (
     <div className="filterable-product-table">
-      <Searchbar />
-      <ProductTable products={props.products} />
+      <Searchbar
+        filterText={filterText}
+        inStockOnly={inStockOnly}
+        onFilterTextChange={setFilterText}
+        onInStockOnlyChange={setInStockOnly}
+      />
+      <ProductTable products={props.products} filterText={filterText} inStockOnly={inStockOnly} />
       <div>
         {/* {props.products.map((product) => (
           <div>
