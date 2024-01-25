@@ -13,6 +13,8 @@ interface Product {
 }
 
 export const ProductTable = (props: { products: Product[] }) => {
+  // have to give it a type JSX.Element because constant valiables can't
+  // be initialized with a type of any and can't be null/empty
   const rows: JSX.Element[] = [];
   let lastCategory: string = "";
 
@@ -20,7 +22,7 @@ export const ProductTable = (props: { products: Product[] }) => {
     if (product.category !== lastCategory) {
       rows.push(<ProductCategoryRow category={product.category} key={product.category} />);
     }
-    rows.push(<ProductRow name={product.name} price={product.price} />);
+    rows.push(<ProductRow product={product} key={product.name} />);
 
     lastCategory = product.category;
   });
