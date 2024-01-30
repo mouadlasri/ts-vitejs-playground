@@ -26,15 +26,6 @@ export const FilterableProductTable = (props: { products: Product[] }) => {
         onInStockOnlyChange={setInStockOnly}
       />
       <ProductTable products={props.products} filterText={filterText} inStockOnly={inStockOnly} />
-      <div>
-        {/* {props.products.map((product) => (
-          <div>
-            <span>{product.category}</span>
-            <span>{product.price}</span>
-            <span>{product.name}</span>
-          </div>
-        ))} */}
-      </div>
     </div>
   );
 };

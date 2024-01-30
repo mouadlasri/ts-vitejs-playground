@@ -13,7 +13,7 @@ interface Product {
 }
 
 export const ProductTable = (props: { products: Product[]; filterText: string; inStockOnly: boolean }) => {
-  // have to give it a type JSX.Element because constant valiables can't
+  // have to give it a type JSX.Element because constant variables can't
   // be initialized with a type of any and can't be null/empty
   const rows: JSX.Element[] = [];
   let lastCategory: string = "";
